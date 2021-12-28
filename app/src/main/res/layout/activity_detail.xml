@@ -1,8 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.viewpager2.widget.ViewPager2 xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/view_pager"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.detailactivity.DetailActivity" />
+    android:layout_height="match_parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:context=".ui.detailactivity.DetailActivity" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_margin="10dp"
+        android:id="@+id/previous"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#DCDCDC"
+        android:clickable="true"
+        android:contentDescription="@string/previous"
+        android:focusable="true"
+        android:src="@drawable/previous_next"
+        app:contentPadding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Theme.WallpaperApp.CornerSize" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/next"
+        android:layout_margin="10dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#DCDCDC"
+        android:clickable="true"
+        android:contentDescription="@string/next"
+        android:focusable="true"
+        android:rotation="180"
+        android:src="@drawable/previous_next"
+        app:contentPadding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Theme.WallpaperApp.CornerSize" />
+</androidx.constraintlayout.widget.ConstraintLayout>

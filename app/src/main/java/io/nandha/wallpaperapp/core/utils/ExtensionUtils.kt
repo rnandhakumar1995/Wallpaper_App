@@ -1,7 +1,12 @@
 package io.nandha.wallpaperapp.core.utils
 
+import android.content.Context
+import android.graphics.drawable.Drawable
+import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestBuilder
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import io.nandha.wallpaperapp.R
 import io.nandha.wallpaperapp.data.model.Image
 import java.lang.reflect.Type
 
@@ -10,4 +15,8 @@ fun String.toImageList(): List<Image> {
     return Gson().fromJson(
         this, listType
     )
+}
+
+fun RequestBuilder<Drawable>.showLoading(context: Context): RequestBuilder<Drawable> {
+    return placeholder(R.drawable.loading).thumbnail(Glide.with(context).load(R.drawable.loading))
 }

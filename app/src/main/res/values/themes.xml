@@ -22,4 +22,11 @@
     <style name="Theme.WallpaperApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.WallpaperApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="NoBackgroundDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <style name="Theme.WallpaperApp.CornerSize">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
