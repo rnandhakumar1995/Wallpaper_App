@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import io.nandha.wallpaperapp.R
+import io.nandha.wallpaperapp.core.utils.showLoading
 import io.nandha.wallpaperapp.data.model.Image
 import io.nandha.wallpaperapp.ui.detailactivity.DetailActivity
 
@@ -29,15 +30,15 @@ class ImageItemAdapter(private val images: List<Image>) :
         val image = images[holder.adapterPosition]
         Glide
             .with(holder.itemView.context)
-            .load(image.url)
+            .load(image.url).showLoading(holder.itemView.context)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
         holder.title.text = image.title
         holder.itemView.setOnClickListener {
-            it.context?.also {
-                val intent = Intent(it, DetailActivity::class.java)
+            it.context?.also { context ->
+                val intent = Intent(context, DetailActivity::class.java)
                 intent.putExtra("position", holder.adapterPosition)
-                it.startActivity(intent)
+                context.startActivity(intent)
             }
         }
 
