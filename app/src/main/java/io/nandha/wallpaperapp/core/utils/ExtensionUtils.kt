@@ -5,14 +5,18 @@ import android.graphics.drawable.Drawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
 import com.google.gson.Gson
+import com.google.gson.JsonSyntaxException
 import com.google.gson.reflect.TypeToken
 import io.nandha.wallpaperapp.R
 import io.nandha.wallpaperapp.data.model.Image
+import java.lang.IllegalArgumentException
 import java.lang.reflect.Type
 import java.text.SimpleDateFormat
 import java.util.*
 
 fun String.toImageList(): List<Image> {
+    if (this == "") throw IllegalArgumentException("please check the input")
+    if (this.length > 0 && this[0] == '{') throw JsonSyntaxException("please check the input")
     val listType: Type = object : TypeToken<List<Image>>() {}.type
     return Gson().fromJson(
         this, listType
