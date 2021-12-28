@@ -28,20 +28,19 @@ class ImageItemAdapter(private val images: List<Image>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val image = images[holder.adapterPosition]
-        Glide
-            .with(holder.itemView.context)
-            .load(image.url).showLoading(holder.itemView.context)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .into(holder.image)
-        holder.title.text = image.title
-        holder.itemView.setOnClickListener {
-            it.context?.also { context ->
-                val intent = Intent(context, DetailActivity::class.java)
-                intent.putExtra("position", holder.adapterPosition)
-                context.startActivity(intent)
+        holder.apply {
+            Glide
+                .with(itemView.context)
+                .load(image.url).showLoading(itemView.context)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(this.image)
+            title.text = image.title
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, DetailActivity::class.java)
+                intent.putExtra("position", adapterPosition)
+                itemView.context.startActivity(intent)
             }
         }
-
     }
 
     override fun getItemCount() = images.size
