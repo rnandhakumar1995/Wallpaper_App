@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Wallpaper App</string>
     <string name="image_holder">Image holder</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
