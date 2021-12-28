@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val view = activityMainBinding.root
         setContentView(view)
         val imageItemAdapter = ImageItemAdapter(viewModel.data)
-        activityMainBinding.imageGrid.layoutManager = GridLayoutManager(this, 3)
+        activityMainBinding.imageGrid.layoutManager = GridLayoutManager(this, 2)
         activityMainBinding.imageGrid.adapter = imageItemAdapter
     }
 }
