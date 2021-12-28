@@ -40,13 +40,15 @@ class IndividualItemAdapter(private val images: List<Image>) :
 
             this.expand.setOnClickListener {
                 val btmSheet = BottomSheetDialog(itemView.context, R.style.NoBackgroundDialogTheme)
-                btmSheet.setContentView(R.layout.image_details)
-                val title: TextView? = btmSheet.findViewById(R.id.title)
-                val explanation: TextView? = btmSheet.findViewById(R.id.explanation)
-                title?.text = image.title
-                btmSheet.edgeToEdgeEnabled
-                explanation?.text = image.explanation
-                btmSheet.show()
+                with(btmSheet) {
+                    setContentView(R.layout.image_details)
+                    val title: TextView? = findViewById(R.id.title)
+                    val explanation: TextView? = findViewById(R.id.explanation)
+                    title?.text = image.title
+                    explanation?.text = image.explanation
+                    show()
+                }
+
             }
         }
     }
