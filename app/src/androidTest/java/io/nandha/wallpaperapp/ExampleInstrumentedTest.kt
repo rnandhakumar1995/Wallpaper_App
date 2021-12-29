@@ -28,14 +28,13 @@ class ExampleInstrumentedTest {
 
     @Test
     fun aTestClickOnItem() {
-        goToPosition(3)
-//        checkCurrentPositionBasedOnTag("A Distorted Sunrise Eclipse")
+        goToPosition(1)
+        checkCurrentPositionBasedOnTag("Messier 20 and 21")
     }
 
     @Test
     fun bTestPreviousButton() {
         goToPosition(2)
-        onIdle()
         onView(withId(R.id.previous)).perform(click()).perform(click()).perform(
             click()
         ).perform(click()).perform(click())
@@ -45,7 +44,6 @@ class ExampleInstrumentedTest {
     @Test
     fun cTestNextButton() {
         goToPosition(10)
-        onIdle()
         onView(withContentDescription(R.string.next)).perform(click()).perform(click())
             .perform(click()).perform(click()).perform(click()).perform(click()).perform(click())
             .perform(click()).perform(click()).perform(click()).perform(click()).perform(click())
