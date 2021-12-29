@@ -37,6 +37,7 @@ class IndividualItemAdapter(private val images: List<Image>) :
                 .into(this.image)
             Glide.with(itemView.context).load(R.drawable.arrow).into(this.expand)
 
+            this.expand.tag = image.title
 
             this.expand.setOnClickListener {
                 val btmSheet = BottomSheetDialog(itemView.context, R.style.NoBackgroundDialogTheme)
