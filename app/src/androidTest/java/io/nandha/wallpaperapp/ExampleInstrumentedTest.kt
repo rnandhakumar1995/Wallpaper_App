@@ -20,20 +20,19 @@ import org.junit.runners.MethodSorters
 
 
 @RunWith(AndroidJUnit4::class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class ExampleInstrumentedTest {
     @get: Rule
     val mainActivity = ActivityScenarioRule(MainActivity::class.java)
 
 
     @Test
-    fun aTestClickOnItem() {
+    fun testClickOnItem() {
         goToPosition(1)
         checkCurrentPositionBasedOnTag("Messier 20 and 21")
     }
 
     @Test
-    fun bTestPreviousButton() {
+    fun testPreviousButton() {
         goToPosition(2)
         onView(withId(R.id.previous)).perform(click()).perform(click()).perform(
             click()
@@ -42,7 +41,7 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun cTestNextButton() {
+    fun testNextButton() {
         goToPosition(10)
         onView(withContentDescription(R.string.next)).perform(click()).perform(click())
             .perform(click()).perform(click()).perform(click()).perform(click()).perform(click())
