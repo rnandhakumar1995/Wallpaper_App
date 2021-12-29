@@ -24,7 +24,6 @@
         android:contentDescription="@string/expand_description"
         android:focusable="true"
         android:paddingTop="5dp"
-        android:rotation="180"
         android:src="@drawable/arrow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
