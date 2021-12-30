@@ -12,13 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="16dp"
+        android:background="?attr/screenBg"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="?attr/textColor"
             android:textSize="15sp"
             app:layout_constraintTop_toTopOf="parent" />
 

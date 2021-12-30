@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="screenBg" format="reference" />
+    <attr name="cardBg" format="reference" />
+    <attr name="textColor" format="reference" />
+</resources>

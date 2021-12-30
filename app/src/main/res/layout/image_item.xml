@@ -6,7 +6,7 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardBackgroundColor="@android:color/white"
+    app:cardBackgroundColor="?attr/cardBg"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true">
@@ -29,7 +29,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:textSize="13sp"
-            android:textColor="@color/black"
+            android:textColor="?attr/textColor"
             android:layout_height="50dp"
             android:ellipsize="end"
             android:gravity="center_vertical"
